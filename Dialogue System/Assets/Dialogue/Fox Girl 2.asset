@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b699c7bb173a1e542ba1650915d8fbeb, type: 3}
+  m_Name: Fox Girl 2
+  m_EditorClassIdentifier: 
+  name: Fox Girl 2
+  sentences:
+  - Branch~Hello person. I'm Fox Girl. How's your day?~Good~Bad
+  - Branch~Did you finish today's homework?~Yes~No
+  - The teacher is here. Talk to you later.
+  branches:
+  - 0~0~Me too!~0
+  - 0~1~Well... then.~0
+  - 0~1~I hope your day gets better, person.~0
+  - 1~0~Me, too! It was so easy.~1
+  - 1~1~Well, sucks. It wasn't too hard of a homework.~1

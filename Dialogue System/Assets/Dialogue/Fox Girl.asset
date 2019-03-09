@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b699c7bb173a1e542ba1650915d8fbeb, type: 3}
+  m_Name: Fox Girl
+  m_EditorClassIdentifier: 
+  name: Fox Girl
+  sentences:
+  - Hi, there. I'm Fox Girl
+  - Branch~Do you want to go on a date with me?~Yes~No
+  - Goodbye!!!
+  branches:
+  - 1~0~Okay, I will text you the details later.~0
+  - 1~0~Here's my number. Call me maybe.~0
+  - 1~1~Okay...then.~0
