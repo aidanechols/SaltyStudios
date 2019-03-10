@@ -114,17 +114,3 @@ Branching Branch with 3 choices - Normal Format~Branch3~<choice1>~<choice2>~<cho
 *Because the way I did it, the example Fox Girl 3 uses 1 to start the reference
 indexes for the branhesInBranches which is arbitary and could of started with 0
 to be consist with the other implementations.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
