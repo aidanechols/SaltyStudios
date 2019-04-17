@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2179a38d139fd79438cd1728c6962a0b, type: 3}
+  m_Name: FoxGirl3
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Hello person. I'm Fox Girl. How's your day?
+  - Did you finish today's homework?
+  - Are you ready for the test?
+  - The teacher's here. Talk to you later!
+  - Me too!
+  - Well... then.
+  - I hope your day gets better, person.
+  - Me, too! It was so easy.
+  - Well, sucks. It wasn't too hard of a homework.
+  - Hey, not cool.
+  - Yeah. How prepared are you for the test?
+  - Sucks for you. Do you need to cheat off me?
+  - Yeah, me too.
+  - Hope that's enough.
+  - Of course, because you're a genius.
+  - Okay, just look over at my desk when the teacher isn't looking.
+  - Well, have fun failing the test.
+  - Are you sure?
+  - Okay, have fun failing! Loser
+  - Okay, just look over at my desk when the teacher isn't looking.
+  characterSprite:
+  - {fileID: 21300000, guid: e7999780573ef1146862b0e605230538, type: 3}
+  - {fileID: 21300000, guid: e7999780573ef1146862b0e605230538, type: 3}
+  - {fileID: 21300000, guid: e7999780573ef1146862b0e605230538, type: 3}
+  - {fileID: 21300000, guid: e7999780573ef1146862b0e605230538, type: 3}
+  - {fileID: 21300000, guid: e7999780573ef1146862b0e605230538, type: 3}
+  - {fileID: 21300000, guid: e7999780573ef1146862b0e605230538, type: 3}
+  - {fileID: 21300000, guid: e7999780573ef1146862b0e605230538, type: 3}
+  - {fileID: 21300000, guid: e7999780573ef1146862b0e605230538, type: 3}
+  - {fileID: 21300000, guid: e7999780573ef1146862b0e605230538, type: 3}
+  - {fileID: 21300000, guid: e7999780573ef1146862b0e605230538, type: 3}
+  - {fileID: 21300000, guid: e7999780573ef1146862b0e605230538, type: 3}
+  - {fileID: 21300000, guid: 67cecd0c76c7c574591b8764dc1704c8, type: 3}
+  - {fileID: 21300000, guid: e7999780573ef1146862b0e605230538, type: 3}
+  - {fileID: 21300000, guid: e7999780573ef1146862b0e605230538, type: 3}
+  - {fileID: 21300000, guid: e7999780573ef1146862b0e605230538, type: 3}
+  - {fileID: 21300000, guid: 67cecd0c76c7c574591b8764dc1704c8, type: 3}
+  - {fileID: 21300000, guid: 67cecd0c76c7c574591b8764dc1704c8, type: 3}
+  - {fileID: 21300000, guid: 67cecd0c76c7c574591b8764dc1704c8, type: 3}
+  - {fileID: 21300000, guid: 67cecd0c76c7c574591b8764dc1704c8, type: 3}
+  - {fileID: 21300000, guid: 67cecd0c76c7c574591b8764dc1704c8, type: 3}
+  positions:
+  - {x: -800, y: -446, z: 0}
+  - {x: -800, y: -446, z: 0}
+  - {x: -800, y: -446, z: 0}
+  - {x: -800, y: -446, z: 0}
+  - {x: -795, y: -446, z: 0}
+  - {x: -795, y: -446, z: 0}
+  - {x: -800, y: -446, z: 0}
+  - {x: -815, y: -446, z: 0}
+  - {x: -815, y: -446, z: 0}
+  - {x: -815, y: -446, z: 0}
+  - {x: -800, y: -440, z: 0}
+  - {x: -800, y: -440, z: 0}
+  - {x: -800, y: -450, z: 0}
+  - {x: -800, y: -450, z: 0}
+  - {x: -800, y: -450, z: 0}
+  - {x: -795, y: -446, z: 0}
+  - {x: -795, y: -446, z: 0}
+  - {x: -800, y: -446, z: 0}
+  - {x: -815, y: -446, z: 0}
+  - {x: -815, y: -446, z: 0}

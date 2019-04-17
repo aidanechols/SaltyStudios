@@ -22,16 +22,21 @@ public class DialogueManager : MonoBehaviour {
     public int branchesInBranchesIndex;
     public int count = 0;
 
+    public GameObject[] foxGirlSprite;
+    public Background foxGirlBackground;
+    public Sprite nextSprite;
+    public Vector3 nextPosition;
+
     // Use this for initialization
     void Start()
     {
         sentences = new Queue<string>();
         branchSentences = new Queue<string>();
+        branchesInBranchesIndex = -1;
     }
 
     public void StartDialogue()
     {
-        nameText.text = characterDialogue.name;
 
         sentences.Clear();
 
@@ -66,10 +71,12 @@ public class DialogueManager : MonoBehaviour {
             {
                 count++;
                 continueButton.SetActive(false);
+                SpriteManager(dialogueOptionSentence[1], dialogueOptionSentence[5]);
                 StopAllCoroutines();
                 StartCoroutine(TypeSentence(dialogueOptionSentence[1]));
                 choice1.text = dialogueOptionSentence[2];
                 choice2.text = dialogueOptionSentence[3];
+                nameText.text = dialogueOptionSentence[4];
                 choiceButton1.GetComponent<RectTransform>().anchoredPosition = new Vector3(640f, -17.8f, 0f);
                 choiceButton2.GetComponent<RectTransform>().anchoredPosition = new Vector3(640f, -95f, 0f);
                 SetButtonsActive(2);
@@ -78,11 +85,13 @@ public class DialogueManager : MonoBehaviour {
             {
                 count++;
                 continueButton.SetActive(false);
+                SpriteManager(dialogueOptionSentence[1], dialogueOptionSentence[6]);
                 StopAllCoroutines();
                 StartCoroutine(TypeSentence(dialogueOptionSentence[1]));
                 choice1.text = dialogueOptionSentence[2];
                 choice2.text = dialogueOptionSentence[3];
                 choice3.text = dialogueOptionSentence[4];
+                nameText.text = dialogueOptionSentence[5];
                 choiceButton1.GetComponent<RectTransform>().anchoredPosition = new Vector3(640f, 61f, 0f);
                 choiceButton2.GetComponent<RectTransform>().anchoredPosition = new Vector3(640f, -17.8f, 0f);
                 SetButtonsActive(3);
@@ -90,24 +99,28 @@ public class DialogueManager : MonoBehaviour {
             else
             {
                 count++;
+                SpriteManager(dialogueOptionSentence[0], dialogueOptionSentence[2]);
                 StopAllCoroutines();
                 StartCoroutine(TypeSentence(dialogueOptionSentence[0]));
+                nameText.text = dialogueOptionSentence[1];
             }
         }
         else
         {
             string branchSentence = branchSentences.Dequeue();
             string[] splitSentence = branchSentence.Split('~');
-            if (splitSentence.Length > 4)
+            if (splitSentence.Length > 6)
             {
                 if (splitSentence[4].Equals("Branch3"))
                 {
                     continueButton.SetActive(false);
+                    SpriteManager(splitSentence[2], splitSentence[10]);
                     StopAllCoroutines();
                     StartCoroutine(TypeSentence(splitSentence[2]));
                     choice1.text = splitSentence[5];
                     choice2.text = splitSentence[6];
                     choice3.text = splitSentence[7];
+                    nameText.text = splitSentence[9];
                     choiceButton1.GetComponent<RectTransform>().anchoredPosition = new Vector3(640f, 61f, 0f);
                     choiceButton2.GetComponent<RectTransform>().anchoredPosition = new Vector3(640f, -17.8f, 0f);
                     SetButtonsActive(3);
@@ -116,10 +129,12 @@ public class DialogueManager : MonoBehaviour {
                 else if (splitSentence[4].Equals("Branch"))
                 {
                     continueButton.SetActive(false);
+                    SpriteManager(splitSentence[2], splitSentence[9]);
                     StopAllCoroutines();
                     StartCoroutine(TypeSentence(splitSentence[2]));
                     choice1.text = splitSentence[5];
                     choice2.text = splitSentence[6];
+                    nameText.text = splitSentence[8];
                     choiceButton1.GetComponent<RectTransform>().anchoredPosition = new Vector3(640f, -17.8f, 0f);
                     choiceButton2.GetComponent<RectTransform>().anchoredPosition = new Vector3(640f, -95f, 0f);
                     SetButtonsActive(2);
@@ -128,8 +143,10 @@ public class DialogueManager : MonoBehaviour {
             }
             else
             {
+                SpriteManager(splitSentence[2], splitSentence[5]);
                 StopAllCoroutines();
                 StartCoroutine(TypeSentence(splitSentence[2]));
+                nameText.text = splitSentence[4];
             }
         }
     }
@@ -209,6 +226,44 @@ public class DialogueManager : MonoBehaviour {
         {
             choiceButton1.GetComponent<RectTransform>().localScale = vec;
             choiceButton2.GetComponent<RectTransform>().localScale = vec;
+        }
+    }
+
+    // Center:  -800, -446
+    // Left:    -795, -446
+    // Right:   -815, -446
+    // Upper:   -800, -440
+    // Lower:   -800, -450
+    public void SpriteManager(string textbox, string characterIndex)
+    {
+        string[] keys = foxGirlBackground.dialogue;
+        Sprite[] values1 = foxGirlBackground.characterSprite;
+        Vector3[] values2 = foxGirlBackground.positions;
+        bool dialogueFound = false;
+        int index = 0;
+        while (!dialogueFound && (index < keys.Length))
+        {
+            if (textbox.Equals(keys[index]))
+            {
+                nextSprite = values1[index];
+                nextPosition = values2[index];
+                dialogueFound = true;
+            }
+            index++;
+        }
+
+        //Have script to move sprites out of frame
+        if (dialogueFound) {
+            for (int x = 0; x < foxGirlSprite.Length; x++) {
+                if (int.Parse(characterIndex) == x) {
+                    foxGirlSprite[int.Parse(characterIndex)].GetComponent<SpriteRenderer>().sprite = nextSprite;
+                    foxGirlSprite[int.Parse(characterIndex)].GetComponent<Transform>().localPosition = nextPosition;
+                }
+                else
+                {
+                    foxGirlSprite[x].GetComponent<Transform>().localPosition = new Vector3(-835.0f, -446.0f, 0.0f);
+                }
+            }
         }
     }
 }
